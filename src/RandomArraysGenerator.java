@@ -3,28 +3,59 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomArraysGenerator {
 
-    public static int[] getRandomArray(int lenght) {
-        int[] array = new int[lenght];
-        for (int i = 0; i < lenght; i++) {
-            array[i] = ThreadLocalRandom.current().nextInt(1,lenght*2);
+    public static int[] getRandomArray(int length) {
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            array[i] = ThreadLocalRandom.current().nextInt(1,length*2);
         }
         return array;
     }
 
-    public static int[] getAscendingArray(int lenght) {
-        int[] array = getRandomArray(lenght);
-        Arrays.sort(array);
+    public static int[] a(int length) {
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            array[i] = getSequenceNumber(i+1);
+        }
+
         return array;
+    }
+    public static int getSequenceNumber(int n) {
+        if (n == 1) return 1;
+        return 3*getSequenceNumber(n-1) + 1;
+
     }
 
 
-    public static int[] getDescendingArray(int lenght) {
-        int[] array = getAscendingArray(lenght);
-        for(int i = 0; i < array.length / 2; i++) { // odwracam array żeby z rosnącego uzyskać malejący
-            int temp = array[i];
-            array[i] = array[array.length - i - 1];
-            array[array.length - i - 1] = temp;
+    public static int[] b(int length) {
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            array[i] = (int) Math.pow(2,i)-1;
         }
         return array;
     }
+
+    public static int[] c(int length) {
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            array[i] = (int) Math.pow(2,i)+1;
+        }
+        return array;
+    }
+
+    public static int[] d(int length) {
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            array[i] = getFibonacci(i+1);
+        }
+        return array;
+    }
+
+    public static int getFibonacci(int n) {
+        if (n == 1) return 0;
+        if (n == 2) return 1;
+        if (n == 3) return 1;
+        return getFibonacci(n-1) + getFibonacci(n-2);
+    }
+
+
 }

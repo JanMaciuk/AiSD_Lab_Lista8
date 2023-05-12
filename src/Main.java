@@ -3,5 +3,6 @@ public class Main {
         System.out.println(Sort.shellSort1Time(RandomArraysGenerator.getRandomArray(10)));
         System.out.println(Sort.shellSort2Time(RandomArraysGenerator.getRandomArray(10)));
         //TODO: implement ShellSort using BubbleSort
+        //TODO 2: call functions on a,b,c,d arrays
     }
 }
