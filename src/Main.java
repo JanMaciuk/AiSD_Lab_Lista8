@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         int div = 1000;  // dzielenie z nanosekund: 100=mikrosekundy, 1000000=milisekundy.
-        int arrayLength = 10000;
+        int arrayLength = 5000;
         System.out.println("Czasy w 1/10 mikrosekundy");
         System.out.println("dla ciągu o długości: "+arrayLength);
 
