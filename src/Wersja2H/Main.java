@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         int div = 1000;  // dzielenie z nanosekund: 100=mikrosekundy, 1000000=milisekundy.
-        int arrayLength = 100000;
+        int arrayLength = 10000;
         System.out.println("Czasy w 1/10 mikrosekundy");
         System.out.println("dla ciągu o długości: "+arrayLength);
 
@@ -14,6 +14,7 @@ public class Main {
         runSorting(div, RandomArraysGenerator.getRandomArray(arrayLength),"Ciąg b:", RandomArraysGenerator.b(arrayLength));
         runSorting(div, RandomArraysGenerator.getRandomArray(arrayLength),"Ciąg c:", RandomArraysGenerator.c(arrayLength));
         runSorting(div, RandomArraysGenerator.getRandomArray(arrayLength),"Ciąg d:", RandomArraysGenerator.d(arrayLength));
+        runSorting(div, RandomArraysGenerator.getRandomArray(arrayLength),"Ciąg dodatkowy:", RandomArraysGenerator.dodatkowy(arrayLength));
     }
 
     public static void runSorting(int division, int[] array,String text, ArrayList<Integer> Hlist) {

@@ -2,6 +2,7 @@ package Wersja2H;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomArraysGenerator {
@@ -72,6 +73,20 @@ public class RandomArraysGenerator {
         return array;
     }
 
+    public static ArrayList<Integer> dodatkowy(int lenght) {
+        ArrayList<Integer> array = new ArrayList<>();
+        int h = lenght/2;
+        for (int i = lenght; i > 0; i--) {
+            if (h < 1) break;
+            array.add(h);
+            h = (int) (0.75*h);
+        }
+        Collections.reverse(array);
+        return array;
+
+    }
+
+
 
     //Ta metoda rekruencyjna jest strasznie złożona dla dużych długości.
 //    public static int getFibonacci(int n) {
@@ -84,9 +99,7 @@ public class RandomArraysGenerator {
         return (int)Math.floor(Math.pow(phi, n) * inverseSqrt5 + 0.5);
     }
 
-//    public static void main(String[] args) {
-//        for (int i = 0; i < 10; i++) {
-//            System.out.println(getFibonacci(i+1));
-//        }
-//    }
+    public static void main(String[] args) {
+        System.out.println((dodatkowy(100)));
+    }
 }
